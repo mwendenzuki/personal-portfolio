@@ -15,13 +15,15 @@ export const Newsletter = ({onValidated, status, message}) => {
 		onValidated({
 			EMAIL: email
 		})
-	}
+	} 
+
 	const clearFields = () => {
 		setEmail("")
 	}
+	
   return (
 	<Col lg={12}>
-		<div className="newsletter-bx"></div>
+		<div className="newsletter-bx wow slideInUp"></div>
 		<Row>
 			<Col lg={12} md={6} xl={5}>
 				<h3>Subscribe to our Newsletter</h3>

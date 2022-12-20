@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
+import TrackVisibility from "react-on-screen"
+import 'animate.css'
 
 import contactImg from '../assets/images/contact-img.svg'
 
@@ -21,7 +23,7 @@ export const Contact = () => {
 			...formDetails,
 			[category]: value
 	})
-	}
+	} 
 
 	const handleSubmit = async(e) => {
 		e.preventDefault()
@@ -52,6 +54,9 @@ export const Contact = () => {
 					<img src={contactImg} alt="Contact Us"/>
 				</Col>
 				<Col md={6}>
+					<TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
 					<h2>Get In Touch</h2>
 					<form onSubmit={handleSubmit}>
 						<Row>
@@ -106,6 +111,8 @@ export const Contact = () => {
 							}
 						</Row>
 					</form>
+					</div>}
+					</TrackVisibility>
 				</Col>
 			</Row>
 		</Container>
